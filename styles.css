@@ -1,0 +1,1314 @@
+/* Main Styles for CNfans Spreadsheet Finds */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 0px;
+    /* 为固定的logo栏添加上边距 */
+}
+
+/* Top Info Bar Styles */
+.top-info-bar {
+    background: #f8f9fa;
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.5;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.top-info-bar i {
+    margin-right: 6px;
+    color: #3c91e6;
+}
+
+.top-info-bar strong {
+    color: #0056b3;
+}
+
+/* Fixed Logo Bar Styles */
+.fixed-logo-bar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 280px;
+    min-width: 160px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 12px 24px;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 20px 20px;
+    border: 1px solid rgba(255, 99, 71, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 99;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 99, 71, 0.05);
+}
+
+/* 隐藏中间的汉堡菜单按钮 */
+.header-top .mobile-menu-btn {
+    display: none !important;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 25px;
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 3px 5px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
+
+.header-bottom {
+    padding: 0 25px 15px 25px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6347;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+}
+
+.header-top .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    color: #ff4500;
+}
+
+.search-container {
+    position: relative;
+    flex: 0 1 450px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box {
+    width: 100%;
+    padding: 10px 18px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.search-box:focus {
+    border-color: #ff6347;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(255, 99, 71, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 18px;
+    color: #999;
+    cursor: pointer;
+    font-size: 15px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.search-icon:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    margin: 5px 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.nav-links a i {
+    margin-right: 6px;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+    background-color: rgba(255, 99, 71, 0.08);
+}
+
+.nav-links a.active {
+    color: #ff6347;
+    background-color: rgba(255, 99, 71, 0.1);
+    font-weight: 600;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: none;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    background-color: white;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    scrollbar-width: thin;
+    scrollbar-color: #ff6347 #f0f0f0;
+}
+
+/* Custom scrollbar for webkit browsers */
+nav::-webkit-scrollbar {
+    height: 4px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background-color: #ff6347;
+    border-radius: 10px;
+}
+
+/* 信任保障按钮和弹窗样式 */
+#trustBtn.trust-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 0px;
+    z-index: 1000;
+}
+
+#trustBtn.trust-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 当trustBtn不在浮动按钮容器中时的样式 */
+#trustBtn:not(.trust-icon) {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#trustBtn:not(.trust-icon):hover {
+    transform: scale(1.1);
+    background-color: #ff4500;
+}
+
+#trustModal {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    left: 100px;
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    width: 300px;
+    z-index: 999;
+    font-size: 14px;
+    line-height: 1.6;
+    border-left: 5px solid #ff6347;
+    animation: fadeIn 0.3s ease-in-out;
+    transform-origin: bottom left;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#trustModal p {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+#trustModal p:last-child {
+    margin-bottom: 0;
+}
+
+#trustModal p strong {
+    color: #ff6347;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+#closeTrustModal:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+    color: #333;
+    transform: scale(1.05);
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav a i {
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ff6347;
+    background-color: rgba(255, 99, 71, 0.08);
+}
+
+nav a.active {
+    color: #ff6347;
+    font-weight: 500;
+}
+
+/* Container and Grid Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-top: 20px;
+    /* 添加顶部边距，避免产品被搜索框遮挡 */
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+    position: relative;
+    border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #e0e0e0;
+}
+
+.product-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* 商品详情弹窗样式 */
+.product-detail-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.product-detail-content {
+    background-color: white;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-detail-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-detail-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.product-detail-close:hover {
+    color: #ff6347;
+}
+
+.product-detail-body {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-detail-images {
+    flex: 0 0 50%;
+    padding-right: 20px;
+}
+
+.product-detail-main-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-detail-thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.product-detail-thumbnail {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.product-detail-thumbnail:hover,
+.product-detail-thumbnail.active {
+    border-color: #ff6347;
+}
+
+.product-detail-info {
+    flex: 0 0 50%;
+}
+
+.product-detail-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e63946;
+    margin-bottom: 15px;
+}
+
+.product-detail-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.product-detail-attributes {
+    margin-bottom: 20px;
+}
+
+.product-detail-attribute {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.attribute-name {
+    flex: 0 0 120px;
+    font-weight: 600;
+    color: #666;
+}
+
+.attribute-value {
+    flex: 1;
+    color: #333;
+}
+
+.product-detail-actions {
+    margin-top: 20px;
+}
+
+.product-detail-buy-btn {
+    display: inline-block;
+    background-color: #ff6347;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.product-detail-buy-btn:hover {
+    background-color: #ff4500;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 99, 71, 0.3);
+}
+
+.product-detail-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: #666;
+    font-size: 16px;
+}
+
+.product-detail-loading i {
+    margin-right: 15px;
+    color: #ff6347;
+    font-size: 24px;
+    animation: spin 1s infinite linear;
+}
+
+@media (max-width: 768px) {
+    .product-detail-body {
+        flex-direction: column;
+    }
+
+    .product-detail-images,
+    .product-detail-info {
+        flex: 0 0 100%;
+        padding-right: 0;
+    }
+
+    .product-detail-images {
+        margin-bottom: 20px;
+    }
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    grid-column: 1 / -1;
+    color: #666;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+}
+
+.loading-indicator i {
+    margin-right: 12px;
+    color: #ff6347;
+    font-size: 18px;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation for product cards */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 12px;
+    border-top: 1px solid #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 180px);
+}
+
+.product-title {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
+    /* 保持行高为1.4 */
+    font-weight: 600;
+    word-break: normal;
+    /* 不在单词中间断行 */
+    white-space: normal;
+    /* 允许标题自然换行 */
+    hyphens: auto;
+    /* 在适当的位置添加连字符 */
+}
+
+.product-subtitle {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+    font-weight: 400;
+}
+
+.product-note {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    margin: 2px 0;
+    margin-top: auto;
+    padding-top: 4px;
+    border-top: 1px dashed #eee;
+}
+
+.product-price {
+    margin: 6px 0 0 0;
+    display: flex;
+    align-items: center;
+}
+
+.us-price,
+.eur-price {
+    display: inline-block;
+    position: relative;
+}
+
+/* 移除了货币符号伪元素，因为数据中已包含符号 */
+
+.us-price {
+    font-weight: bold;
+    font-size: 15px;
+    color: #e63946;
+    /* 稍微调整红色，使其更加醒目 */
+}
+
+.eur-price {
+    color: #888;
+    /* 更浅的灰色，降低视觉优先级 */
+    font-size: 13px;
+    margin-left: 8px;
+    font-weight: normal;
+    /* 确保副币种不加粗 */
+}
+
+.no-products,
+.error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    color: #666;
+    font-size: 16px;
+}
+
+.error-message {
+    color: #ff4500;
+}
+
+.loading-indicator,
+.loading-more-indicator {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    color: #666;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    grid-column: 1 / -1;
+}
+
+.end-message {
+    text-align: center;
+    padding: 25px;
+    font-size: 15px;
+    color: #666;
+    width: 100%;
+    margin: 10px auto;
+    grid-column: 1 / -1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+    border: 1px dashed #ddd;
+}
+
+/* Floating Buttons */
+.floating-buttons {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.floating-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    max-height: 200px;
+    /* 足够容纳内容的高度 */
+}
+
+.floating-content.collapsed {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.toggle-btn {
+    background-color: #0088cc;
+    z-index: 1001;
+}
+
+.float-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.help-btn {
+    background-color: #0088cc;
+}
+
+.float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.telegram-icon,
+.whatsapp-icon,
+.trust-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0px;
+}
+
+.telegram-icon:hover,
+.trust-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #ff6347;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    font-size: 18px;
+}
+
+.back-to-top:hover {
+    background-color: #ff4500;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.telegram-icon:hover,
+.whatsapp-icon:hover,
+.trust-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 30px;
+        /* 在平板设备上增加顶部边距 */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    /* Header adjustments for mobile */
+    .header-top {
+        padding: 12px 15px;
+    }
+
+    .header-bottom {
+        padding: 0 15px 12px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    /* Fixed logo bar mobile styles */
+    .fixed-logo-bar {
+        max-width: 240px;
+        min-width: 140px;
+        padding: 10px 18px;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.08);
+    }
+    
+    .fixed-logo-bar .logo {
+        font-size: 28px !important;
+        text-align: center !important;
+        background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .search-container {
+        flex: 1;
+        margin: 0;
+        width: 100%;
+    }
+
+    .search-box {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 14px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 1px solid rgba(255, 99, 71, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s ease;
+    }
+    
+    .search-box:focus {
+        border-color: #ff6347;
+        background: white;
+        box-shadow: 0 3px 12px rgba(255, 99, 71, 0.15);
+        transform: translateY(-1px);
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    /* 移动端导航样式 - 直接显示在安全支付下面 */
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        position: static;
+        width: 100%;
+        height: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        padding: 12px 16px;
+        margin: 0;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+        border-top: 1px solid rgba(255, 99, 71, 0.08);
+        border-bottom: 1px solid rgba(255, 99, 71, 0.08);
+        scrollbar-width: thin;
+        scrollbar-color: #ff6347 #f0f0f0;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    /* 自定义滚动条样式 */
+    nav::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    nav::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 10px;
+    }
+
+    nav::-webkit-scrollbar-thumb {
+        background-color: #ff6347;
+        border-radius: 10px;
+    }
+
+    nav a {
+        display: flex;
+        align-items: center;
+        padding: 10px 16px;
+        margin: 0 6px;
+        min-width: max-content;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: 600;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 1px solid rgba(255, 99, 71, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        white-space: nowrap;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        position: relative;
+        overflow: hidden;
+    }
+
+    nav a i {
+        margin-right: 6px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transition: left 0.5s;
+    }
+    
+    nav a:hover::before {
+        left: 100%;
+    }
+    
+    nav a:hover {
+        background: linear-gradient(135deg, rgba(255, 99, 71, 0.1) 0%, rgba(255, 99, 71, 0.05) 100%);
+        border-color: #ff6347;
+        color: #ff6347;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 99, 71, 0.15);
+    }
+
+    nav a:hover i {
+        color: #ff6347;
+        transform: scale(1.1);
+    }
+
+    nav a.active {
+        background: linear-gradient(135deg, #ff6347 0%, #ff4500 100%);
+        color: white;
+        border-color: #ff6347;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
+    }
+
+    nav a.active i {
+        color: white;
+        transform: scale(1.05);
+    }
+
+    /* 隐藏汉堡菜单按钮 */
+    .mobile-menu-btn {
+        display: none !important;
+    }
+}
+
+/* 用户反馈动画 */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* 用户反馈样式 */
+.user-feedback {
+    transition: all 0.3s ease;
+}
+
+.user-feedback .feedback-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-feedback .feedback-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.user-feedback .feedback-close:hover {
+    opacity: 1;
+}
+
+/* 重试按钮样式 */
+.retry-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.retry-btn:hover {
+    background: #0056b3;
+}
+
+/* 图片加载状态 */
+.product-image.loaded {
+    opacity: 1;
+}
+
+.product-image.error {
+    opacity: 0.7;
+    filter: grayscale(100%);
+}
+
+/* 产品卡片动画优化 */
+.product-card {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin-top: 40px;
+        /* 在手机设备上增加更大的顶部边距 */
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    /* Header adjustments for very small screens */
+    .header-top {
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        border-bottom: 1px solid rgba(255, 99, 71, 0.08);
+    }
+    
+    .fixed-logo-bar {
+        max-width: 200px;
+        min-width: 120px;
+        padding: 8px 16px;
+        border-radius: 0 0 14px 14px;
+    }
+    
+    .fixed-logo-bar .logo {
+        font-size: 24px !important;
+        font-weight: 800;
+    }
+    .header-bottom {
+        padding: 0 12px 10px 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff6347;
+        text-decoration: none;
+        transition: transform 0.2s ease, color 0.2s ease;
+        display: inline-block;
+    }
+
+
+
+    .search-container {
+        margin: 0;
+    }
+
+    .search-box {
+        padding: 8px 14px;
+        font-size: 13px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        border: 1px solid rgba(255, 99, 71, 0.12);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+    
+    .search-box:focus {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(255, 99, 71, 0.12);
+    }
+
+    .search-icon {
+        right: 10px;
+        font-size: 12px;
+    }
+
+    .nav-links a:first-child {
+        padding: 4px 6px;
+        font-size: 13px;
+    }
+
+    .mobile-menu-btn {
+        font-size: 18px;
+        padding: 4px;
+    }
+
+    /* Adjust nav position for smaller screens */
+    nav {
+        top: 90px;
+        /* Smaller top value for smaller screens */
+    }
+
+    /* Product adjustments for very small screens */
+    .product-image {
+        height: 140px;
+    }
+
+    .product-info {
+        padding: 8px;
+        height: calc(100% - 140px);
+    }
+
+    .product-title {
+        font-size: 11px;
+        margin: 0 0 2px 0;
+        -webkit-line-clamp: 2;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    .product-subtitle {
+        font-size: 10px;
+        margin-bottom: 3px;
+        line-height: 1.2;
+    }
+
+    .product-note {
+        font-size: 9px;
+        margin-top: auto;
+        padding-top: 4px;
+        border-top: 1px dashed #eee;
+        line-height: 1.2;
+    }
+
+    .product-price {
+        font-size: 12px;
+        margin: 3px 0 0 0;
+    }
+
+    .us-price {
+        font-size: 12px;
+    }
+
+    .eur-price {
+        font-size: 10px;
+        margin-left: 4px;
+    }
+
+    /* Navigation adjustments for very small screens */
+    nav a {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    nav a i {
+        margin-right: 10px;
+        font-size: 15px;
+    }
+}
