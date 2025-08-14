@@ -1,4 +1,4 @@
-# FFBuy SpreadSheet
+# HIGH SpreadSheet
 
 一个现代化的单页应用（SPA）电子商务网站，从Google Sheets数据源动态加载产品信息，支持URL参数路由的分类切换。
 
@@ -54,11 +54,6 @@
 - `?category=Hoodie-Sweatshirt` - 卫衣/运动衫
 - `?category=ELECTRONICOS` - 电子产品
 - `?category=PERFUME` - 香水
-
-## 数据源
-
-所有产品数据通过OpenSheet API从Google Sheets获取：
-`https://opensheet.elk.sh/1hs4cXFLQRhdR8MfQ0vt0oMXhXplksGbU9vzkhO46J6A/[分类名称]`
 
 ## 许可证
 
