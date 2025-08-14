@@ -83,15 +83,15 @@ const CONFIG = {
             displayName: 'Replica-Sneakers'
         },
         { 
-            name: 'Replica-Watches'， 
+            name: 'Replica-Watches', 
             endpoint: 'Replica-Watches', 
             icon: 'fas fa-clock',
             fileName: 'Replica-Watches.html',
             displayName: 'Replica-Watches'
-        }，
+        },
         { 
             name: 'Perfume', 
-            endpoint: 'Perfume'， 
+            endpoint: 'Perfume', 
             icon: 'fas fa-spray-can',
             fileName: 'Perfume.html',
             displayName: 'Perfume'
@@ -104,36 +104,36 @@ const CONFIG = {
             displayName: 'Clothing'
         },
         { 
-            name: 'Caps'， 
+            name: 'Caps', 
             endpoint: 'Caps', 
             icon: 'fas fa-hat-cowboy',
             fileName: 'Caps.html',
             displayName: 'Caps'
-        }，
+        },
         { 
             name: 'Lego-Sets', 
             endpoint: 'Lego-Sets', 
-            icon: 'fas fa-cubes'，
+            icon: 'fas fa-cubes',
             fileName: 'Lego-Sets.html',
             displayName: 'Lego-Sets'
         },
         { 
-            name: 'Toys'， 
-            endpoint: 'Toys'， 
+            name: 'Toys', 
+            endpoint: 'Toys', 
             icon: 'fas fa-gamepad',
             fileName: 'Toys.html',
             displayName: 'Toys'
-        }，
+        },
         { 
-            name: 'Bags'， 
-            endpoint: 'Bags'， 
+            name: 'Bags', 
+            endpoint: 'Bags', 
             icon: 'fas fa-shopping-bag',
             fileName: 'Bags.html',
             displayName: 'Bags'
-        }，
+        },
         { 
-            name: 'Electronics'， 
-            endpoint: 'Electronics'， 
+            name: 'Electronics', 
+            endpoint: 'Electronics', 
             icon: 'fas fa-laptop',
             fileName: 'Electronics.html',
             displayName: 'Electronics'
@@ -145,7 +145,7 @@ const CONFIG = {
             fileName: 'Rare-Items.html',
             displayName: 'Rare-Items'
         }
-    ]，
+    ],
     
     // 信任信息配置
     TRUST_INFO: {
@@ -158,7 +158,7 @@ const CONFIG = {
 
 // 导出配置（兼容不同的模块系统）
 if (typeof module !== 'undefined' && module.exports) {
-    module。exports = CONFIG;
+    module.exports = CONFIG;
 } else if (typeof window !== 'undefined') {
-    window。CONFIG = CONFIG;
+    window.CONFIG = CONFIG;
 }
