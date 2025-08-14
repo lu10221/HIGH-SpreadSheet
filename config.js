@@ -4,7 +4,7 @@ const CONFIG = {
     SITE: {
         NAME: '$FFBuy SpreadSheet',
         LOGO_TEXT: '$FFBuy SpreadSheet',
-        DEFAULT_CATEGORY: 'Shoes', // 默认跳转的分类
+        DEFAULT_CATEGORY: 'Clothing', // 默认跳转的分类
         // 获取默认分类对象
         get defaultCategory() {
             return CONFIG.categories.find(c => c.name === this.DEFAULT_CATEGORY);
@@ -26,7 +26,7 @@ const CONFIG = {
     
     // API配置
     API: {
-        BASE_URL: 'https://opensheet.elk.sh/1hs4cXFLQRhdR8MfQ0vt0oMXhXplksGbU9vzkhO46J6A',
+        BASE_URL: 'https://opensheet.elk.sh/1U8Bw5KiWU3MT6108MpZmWd8CdriYFlfrqlRXiEVCbno',
         TIMEOUT: 10000, // 10秒超时
         RETRY_COUNT: 3, // 重试次数
         RETRY_DELAY: 1000 // 重试延迟(毫秒)
@@ -69,66 +69,83 @@ const CONFIG = {
     // 分类配置 - 统一管理所有分类信息 (SPA架构)
     categories: [
         { 
-            name: 'HOTPRODUCTS', 
-            endpoint: 'HOTPRODUCTS', 
-            icon: 'fas fa-fire',
-            displayName: 'HOTPRODUCTS'
+            name: 'Top-Picks', 
+            endpoint: 'Top-Picks', 
+            icon: 'fas fa-star',
+            fileName: 'Top-Picks.html',
+            displayName: 'Top-Picks'
         },
         { 
-            name: 'T-Shirt', 
-            endpoint: 'T-Shirt', 
-            icon: 'fas fa-tshirt',
-            displayName: 'T-Shirt'
-        },
-        { 
-            name: 'Pants', 
-            endpoint: 'Pants', 
-            icon: 'fas fa-socks',
-            displayName: 'Pants'
-        },
-        { 
-            name: 'Shoes', 
-            endpoint: 'Shoes', 
+            name: 'Replica-Sneakers', 
+            endpoint: 'Replica-Sneakers', 
             icon: 'fas fa-shoe-prints',
-            displayName: 'Shoes'
+            fileName: 'Replica-Sneakers.html',
+            displayName: 'Replica-Sneakers'
         },
         { 
-            name: 'CheapShoes', 
-            endpoint: 'CheapShoes', 
-            icon: 'fas fa-tags',
-            displayName: 'CheapShoes'
-        },
+            name: 'Replica-Watches'， 
+            endpoint: 'Replica-Watches', 
+            icon: 'fas fa-clock',
+            fileName: 'Replica-Watches.html',
+            displayName: 'Replica-Watches'
+        }，
         { 
-            name: 'Set', 
-            endpoint: 'Set', 
-            icon: 'fas fa-layer-group',
-            displayName: 'Set'
-        },
-        { 
-            name: 'Accessories', 
-            endpoint: 'Accessories', 
-            icon: 'fas fa-gem',
-            displayName: 'Accessories'
-        },
-        { 
-            name: 'Hoodie-Sweatshirt', 
-            endpoint: 'Hoodie-Sweatshirt', 
-            icon: 'fas fa-tshirt',
-            displayName: 'Hoodie/Sweatshirt'
-        },
-        { 
-            name: 'ELECTRONICOS', 
-            endpoint: 'ELECTRONICOS', 
-            icon: 'fas fa-laptop',
-            displayName: 'ELECTRONICOS'
-        },
-        { 
-            name: 'PERFUME', 
-            endpoint: 'PERFUME', 
+            name: 'Perfume', 
+            endpoint: 'Perfume'， 
             icon: 'fas fa-spray-can',
-            displayName: 'PERFUME'
+            fileName: 'Perfume.html',
+            displayName: 'Perfume'
+        },
+        { 
+            name: 'Clothing', 
+            endpoint: 'Clothing', 
+            icon: 'fas fa-tshirt',
+            fileName: 'Clothing.html',
+            displayName: 'Clothing'
+        },
+        { 
+            name: 'Caps'， 
+            endpoint: 'Caps', 
+            icon: 'fas fa-hat-cowboy',
+            fileName: 'Caps.html',
+            displayName: 'Caps'
+        }，
+        { 
+            name: 'Lego-Sets', 
+            endpoint: 'Lego-Sets', 
+            icon: 'fas fa-cubes'，
+            fileName: 'Lego-Sets.html',
+            displayName: 'Lego-Sets'
+        },
+        { 
+            name: 'Toys'， 
+            endpoint: 'Toys'， 
+            icon: 'fas fa-gamepad',
+            fileName: 'Toys.html',
+            displayName: 'Toys'
+        }，
+        { 
+            name: 'Bags'， 
+            endpoint: 'Bags'， 
+            icon: 'fas fa-shopping-bag',
+            fileName: 'Bags.html',
+            displayName: 'Bags'
+        }，
+        { 
+            name: 'Electronics'， 
+            endpoint: 'Electronics'， 
+            icon: 'fas fa-laptop',
+            fileName: 'Electronics.html',
+            displayName: 'Electronics'
+        },
+        { 
+            name: 'Rare-Items', 
+            endpoint: 'Rare-Items', 
+            icon: 'fas fa-gem',
+            fileName: 'Rare-Items.html',
+            displayName: 'Rare-Items'
         }
-    ],
+    ]，
     
     // 信任信息配置
     TRUST_INFO: {
@@ -141,7 +158,7 @@ const CONFIG = {
 
 // 导出配置（兼容不同的模块系统）
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = CONFIG;
+    module。exports = CONFIG;
 } else if (typeof window !== 'undefined') {
-    window.CONFIG = CONFIG;
+    window。CONFIG = CONFIG;
 }
