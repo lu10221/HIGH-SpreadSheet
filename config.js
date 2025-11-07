@@ -55,7 +55,7 @@ const CONFIG = {
     
     // Google Analytics配置
     ANALYTICS: {
-        TRACKING_ID: 'G-DZ3110PTYG'
+        TRACKING_ID: ''
     },
     
     // 支付方式配置
